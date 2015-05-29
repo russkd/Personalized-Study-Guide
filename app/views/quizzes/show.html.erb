@@ -1,0 +1,24 @@
+<% provide(:title, 'Show the Quiz') %>
+
+<%= "Quiz Id: #{@quiz.id}"  %>
+<br>
+<br>
+<h3>Total Questions: <%=@quiz.questions.count%></h3>
+<br>
+<ol>
+<% @quiz.questions.each do |q| %>
+
+<li>
+    <ul>
+        <li><%= "Question Name: #{q.question_name}" %></li>
+    
+        <li><%= "Question Subject: #{q.subject}"  %></li>
+    
+        <li><%= "Question Body: #{q.question_body}"%></li>
+    
+        <li><%= "Answer: #{q.answer}" %></li>
+    </ul>
+<br>
+</li>
+<% end %>
+</ol>

@@ -1,0 +1,8 @@
+<h1>Index of Users</h1>
+
+<% @users.each do |x| %>
+<li><%= x.name %></li>
+<li><%= gravatar_for @user %></li>
+<li> <%= x.email %> </li>
+<% end %>
+

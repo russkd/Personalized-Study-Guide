@@ -1,0 +1,5 @@
+<% provide(:title, 'Build the Quiz') %>
+<h1>Quiz index</h1>
+<% @quizzes.each do |x| %>
+<li><%= link_to x.inspect, quiz_path(x) %></li>
+<% end %>

@@ -1,0 +1,22 @@
+<% provide(:title, 'Build the Questions') %>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@question) do |f| %>
+        <%#= render 'shared/error_messages' %>
+            <%= f.label :question_name %>
+            <%= f.text_field :question_name, class: 'form-control' %>
+
+            <%= f.label :question_body %>
+            <%= f.text_field :question_body, class: 'form-control' %>
+
+            <%= f.label :answer %>
+            <%= f.text_field :answer, class: 'form-control' %>
+
+            <%= f.label :subject %>
+            <%= f.text_field :subject.downcase, class: 'form-control'  %>
+            <br><br>
+            <%= f.submit "Add a question", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

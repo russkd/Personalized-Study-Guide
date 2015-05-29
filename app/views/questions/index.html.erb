@@ -1,0 +1,9 @@
+<h1>Index</h1>
+
+<% @questions.each do |x| %>
+<li> Topic : <%= x.question_name %></li>
+<li> Q : <%= x.question_body %> </li>
+<li> A : <%= x.answer %> </li>
+<li>  <%= link_to 'Show', (x) %><br>
+<hr>
+<% end %>
