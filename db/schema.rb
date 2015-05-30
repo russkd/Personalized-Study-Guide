@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529184053) do
+ActiveRecord::Schema.define(version: 20150530201822) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer_body"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150529184053) do
     t.string   "password_digest"
     t.string   "string"
     t.string   "remember_digest"
+    t.string   "type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
