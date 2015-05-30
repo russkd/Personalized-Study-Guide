@@ -1,0 +1,7 @@
+<h1>Answer Index</h1>
+
+<% @answers.each do |x| %>
+<li> Answer : <%= x.answer_body %> </li>
+<li>  <%= link_to 'Show', (x) %><br>
+<hr>
+<% end %>

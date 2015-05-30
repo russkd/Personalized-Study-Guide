@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new', as: "new_user"
   get 'users/:id' => 'users#show', as: "user"
   get 'signup' => 'users#new'
-  post 'users' => 'users#create' 
+  post 'users' => 'users#create'
   get 'users/:id/edit' => 'users#edit', as: "edit"
   patch 'users/:id/' => 'users#update'
   delete 'users/:id' => 'users#destroy'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get   'questions/:id' => 'questions#show', as: 'question'
   put   'questions/:id/' => 'questions#update'
   patch 'questions/:id/' => 'questions#update'
-  delete 'questions/:id' => 'questions#destroy'
+  delete 'questions/:id' => 'questions#destroy', as: 'destroy'
 
   # Quiz routes
   get   'quizzes' => 'quizzes#index'
@@ -52,5 +52,5 @@ Rails.application.routes.draw do
   get   'answers/:id' => 'answers#show', as: 'answer'
   put   'answers/:id/' => 'answers#update'
   patch 'answers/:id/' => 'answers#update'
-  delete 'answers/:id' => 'answers#destroy'
+  delete 'answers/:id' => 'answers#destroy', as: 'destroy_answer'
 end

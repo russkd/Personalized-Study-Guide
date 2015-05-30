@@ -11,14 +11,19 @@
 <li>
     <ul>
         <li><%= "Question Name: #{q.question_name}" %></li>
-    
+
         <li><%= "Question Subject: #{q.subject}"  %></li>
-    
+
         <li><%= "Question Body: #{q.question_body}"%></li>
-    
+
         <li><%= "Answer: #{q.answer}" %></li>
     </ul>
 <br>
 </li>
 <% end %>
 </ol>
+
+<%# if current_user.id == @quiz.user_id %>
+  <%= link_to 'Edit', edit_quiz_path(@quiz) %><br>
+  <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%# end %>

@@ -1,0 +1,17 @@
+<% provide(:title, 'Build the Answers') %>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@answer) do |f| %>
+        <%#= render 'shared/error_messages' %>
+
+            <%= f.label :answer_body %>
+            <%= f.text_field :answer_body, class: 'form-control' %>
+
+            <%= f.label :subject %>
+            <%= f.text_field :subject.downcase, class: 'form-control'  %>
+            <br><br>
+            <%= f.submit "Add an answer", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

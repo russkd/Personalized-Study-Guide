@@ -1,9 +1,8 @@
 class QuizzesController < ApplicationController
     def new
       if params[:search]
-        # @questions = Question.where(subject: params[:search])
 
-        @questions = Question.where('LOWER(subject) = ?', params[:search].downcase)
+        @questions = Question.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
       else
         @questions = Question.last(20)
       end
@@ -22,7 +21,7 @@ def edit
 end
 
 def create
-    # @quiz 
+    # @quiz
   @quiz = Quiz.new(question_params)
 
   if @quiz.save
@@ -34,7 +33,7 @@ end
 
 def update
   @quiz = Quiz.find(params[:id])
- 
+
   if @quiz.update(question_params)
     redirect_to @quiz
   else
@@ -48,19 +47,19 @@ def selected_questions
   @questions.each do |quest|
     Quizquestion.create(quiz_id: @quiz.id, question_id: quest.to_i)
   end
-  redirect_to quizzes_path
+  redirect_to @quiz
 end
 
 def destroy
   @quiz = Quiz.find(params[:id])
   @quiz.destroy
- 
+
   redirect_to questions_path
 end
 
 private
   def question_params
-      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, 
+      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz,
       :password_confirmation)
   end
 end

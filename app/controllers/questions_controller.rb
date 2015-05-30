@@ -14,12 +14,17 @@ def show
 end
 
 def edit
-    @user = current_user
     @question = Question.find(params[:id])
+    if current_user.id == @question.user_id
+      @user = current_user
+    else
+      flash[:danger] = "You are not authorized to edit this question."
+      redirect_to question_path
+    end
 end
 
 def create
-  @question = Question.new(question_params)
+  @question = current_user.questions.new(question_params)
 
   if @question.save
       redirect_to @question
@@ -29,30 +34,37 @@ def create
 end
 
 def update
-  @user = current_user
-  @question = Question.find(params[:id])
- 
-  if @question.update(question_params)
-    redirect_to @question
+@question = Question.find(params[:id])
+  if current_user.id == @question.user_id
+    @user = current_user
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render 'edit'
+    end
+
   else
-    render 'edit'
+    flash[:danger] = "You are not authorized to change this question."
+    redirect_to root_path
   end
 end
 
 def destroy
   @user = current_user
   @question = Question.find(params[:id])
-  @question.destroy
- 
-  redirect_to questions_path
+  if current_user.id == @question.user_id
+    @question.destroy
+  else
+    flash[:danger] = "You are not authorized to delete this question."
+    redirect_to question_path
+  end
 end
 
 private
   def question_params
-      params.require(:question).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, 
-      :password_confirmation)
+      params.require(:question).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, :user_id, :password_confirmation)
   end
 
 end
-
-

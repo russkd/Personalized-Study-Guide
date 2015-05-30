@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 # Relationships
     has_many :questions
     has_many :answers
+    has_many :quizzes
 
     attr_accessor :remember_token
     before_save { self.email = email.downcase }
