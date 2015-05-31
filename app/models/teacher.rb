@@ -4,5 +4,5 @@ class Teacher < User
     has_many :answers
     has_many :quizzes
 
-    
+    before_save { self.subject = subject.downcase }
   end
