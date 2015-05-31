@@ -59,7 +59,11 @@ end
 
 private
   def question_params
+<<<<<<< HEAD
       params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, :teacher_id,
+=======
+      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer_body, :subject, :quiz,
+>>>>>>> studentModel
       :password_confirmation)
   end
 end

@@ -17,6 +17,7 @@ resources :teachers, controllers: :users
 # Student routes
 resources :students, controllers: :users
 
+
 # Sessions routes
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
