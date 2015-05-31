@@ -2,6 +2,10 @@ class Question < ActiveRecord::Base
 # Relationships
     has_many :quizquestions
     has_many :quizzes, through: :quizquestions
+
+    has_many :questionanswers
+    has_many :answers, through: :questionanswers
+
     belongs_to :user
-    before_save { self.subject = subject.downcase }
+    before_save { self.subject = subject }
 end
