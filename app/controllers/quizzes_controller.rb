@@ -59,7 +59,7 @@ end
 
 private
   def question_params
-      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz,
+      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, :teacher_id,
       :password_confirmation)
   end
 end

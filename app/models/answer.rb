@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
 # Relationships
     belongs_to :question
-    belongs_to :user
+    belongs_to :teacher
 end

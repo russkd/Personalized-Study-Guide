@@ -9,14 +9,13 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
 # User routes
-  get 'users' => 'users#index'
-  get 'users/new' => 'users#new', as: "new_user"
-  get 'users/:id' => 'users#show', as: "user"
-  get 'signup' => 'users#new'
-  post 'users' => 'users#create'
-  get 'users/:id/edit' => 'users#edit', as: "edit"
-  patch 'users/:id/' => 'users#update'
-  delete 'users/:id' => 'users#destroy'
+resources :users
+
+# Teacher routes
+resources :teachers, controllers: :users
+
+# Student routes
+resources :students, controllers: :users
 
 # Sessions routes
   get 'login' => 'sessions#new'
