@@ -7,8 +7,8 @@
       <ul>
         <% @questions.each do |x| %>
         <li class = checkbox inline>
-          <%= check_box_tag 'questions_names[]', x.id %>
-          <%= x.question_body %>
+          <%= check_box_tag 'questions[]', x.id %>
+          <%= x.question %>
         </li>
         <% end %>
       </ul>

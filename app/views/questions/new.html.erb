@@ -5,11 +5,8 @@
     <div class="col-md-5 col-md-offset-1">
         <%= form_for(@question) do |f| %>
         <%#= render 'shared/error_messages' %>
-            <%= f.label :question_name %>
-            <%= f.text_field :question_name, class: 'form-control' %>
-
-            <%= f.label :question_body %>
-            <%= f.text_field :question_body, class: 'form-control' %>
+            <%= f.label :question %>
+            <%= f.text_field :question, class: 'form-control' %>
 
             <%= f.label :answer %>
             <%= f.text_field :answer, class: 'form-control' %>
@@ -28,7 +25,7 @@
       <ul>
         <% @answers.each do |x| %>
         <li class = checkbox inline>
-          <%= check_box_tag 'answers_names[]', x.id %>
+          <%= check_box_tag 'answers_bodies[]', x.id %>
           <%= x.answer_body %>
         </li>
         <% end %>
