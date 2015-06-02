@@ -1,31 +1,35 @@
 class QuestionsController < ApplicationController
-def new
-    @user = current_user
+    def new
+
     @question = Question.new
-end
+    # This is necessary to avoid a nil.
+
+      if params[:search]
+
+        @answers = Answer.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
+      else
+        @answers = Answer.last(15)
+      end
+    end
 
 def index
   @questions = Question.all
 end
 
 def show
-    @user = current_user
-    @question = Question.find(params[:id])
+  @user = current_user
+  @question = Question.find(params[:id])
 end
 
 def edit
     @question = Question.find(params[:id])
-    if current_user.id == @question.user_id
-      @user = current_user
-    else
-      flash[:danger] = "You are not authorized to edit this question."
-      redirect_to question_path
-    end
 end
 
 def create
-  @question = current_user.questions.new(question_params)
-
+    # @question
+  @question = Question.new(question_params)
+  p "****************"
+  p @question
   if @question.save
       redirect_to @question
   else
@@ -34,37 +38,35 @@ def create
 end
 
 def update
-@question = Question.find(params[:id])
-  if current_user.id == @question.user_id
-    @user = current_user
-    @question = Question.find(params[:id])
+  @question = Question.find(params[:id])
 
-    if @question.update(question_params)
-      redirect_to @question
-    else
-      render 'edit'
-    end
-
+  if @question.update(question_params)
+    redirect_to @question
   else
-    flash[:danger] = "You are not authorized to change this question."
-    redirect_to root_path
+    render 'edit'
   end
 end
 
-def destroy
-  @user = current_user
-  @question = Question.find(params[:id])
-  if current_user.id == @question.user_id
-    @question.destroy
-  else
-    flash[:danger] = "You are not authorized to delete this question."
-    redirect_to question_path
+def selected_answers
+  @question = Question.create
+  @answers = params['answer_names']
+
+  @answers.each do |answ|
+    QuestionAnswer.create(question_id: @question.id, answer_id: answ.to_i)
   end
+  redirect_to @question
+end
+
+def destroy
+  @question = Question.find(params[:id])
+  @question.destroy
+
+  redirect_to questions_path
 end
 
 private
   def question_params
-      params.require(:question).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :quiz, :user_id, :password_confirmation)
+      params.require(:questions).permit(:name, :email, :password, :question_name, :question_body, :answer, :subject, :question,
+      :password_confirmation)
   end
-
 end

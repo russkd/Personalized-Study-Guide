@@ -27,12 +27,13 @@ Rails.application.routes.draw do
   get   'questions' => 'questions#index'
   post  'questions' => 'questions#create'
   get   'questions/new' => 'questions#new' , as: 'new_question'
+  get   'questions/selected_answers' => 'questions#selected_answers'
   get   'questions/:id/edit' => 'questions#edit', as: 'edit_question'
   get   'questions/:id' => 'questions#show', as: 'question'
   put   'questions/:id/' => 'questions#update'
   patch 'questions/:id/' => 'questions#update'
   delete 'questions/:id' => 'questions#destroy', as: 'destroy'
-
+  
   # Quiz routes
   get   'quizzes' => 'quizzes#index'
   post  'quizzes' => 'quizzes#create'

@@ -9,12 +9,17 @@
         <li class = checkbox inline>
           <%= check_box_tag 'questions_names[]', x.id %>
           <%= x.question_body %>
+
         </li>
         <% end %>
       </ul>
+      <br>
+      <br>
+      
+
       <%= submit_tag "Select the questions for the quiz" %>
       <% end %>
-        
+
         <h1>Search by Subject</h1>
 
           <%= form_tag(new_quiz_path, :method => "get", id: "search-form") do %>

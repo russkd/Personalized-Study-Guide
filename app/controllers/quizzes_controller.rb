@@ -4,7 +4,8 @@ class QuizzesController < ApplicationController
 
         @questions = Question.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
       else
-        @questions = Question.last(20)
+        @questions = Question.last(15)
+        # @questions
       end
     end
 
@@ -13,7 +14,8 @@ def index
 end
 
 def show
-    @quiz = Quiz.find(params[:id])
+  @user = current_user
+  @quiz = Quiz.find(params[:id])
 end
 
 def edit
