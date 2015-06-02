@@ -3,5 +3,8 @@ class Question < ActiveRecord::Base
     has_many :quizquestions
     has_many :quizzes, through: :quizquestions
     belongs_to :user
-    before_save { self.subject = subject.downcase }
+
+    has_many :questionanswers
+    has_many :answers, through: :questionanswers
+
 end
