@@ -6,12 +6,10 @@
             <section class="user_info">
                 <h1><%= gravatar_for @user %></h1><br>
                 <h4><%= @user.name%></h4><br><br>
-                <h3>
-                Answer:  <%= @answer.answer_body %>
-                </h3>
-                <h3>
-                Subject:  <%= @answer.subject %>
-                </h3>
+                <h3>Answer: </h3><%= @answer.answer_body %>
+
+                <h3>Subject: </h3> <%= @answer.subject %>
+
             </section>
         </aside>
     </div>

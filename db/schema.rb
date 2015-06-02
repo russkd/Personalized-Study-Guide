@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602044406) do
+ActiveRecord::Schema.define(version: 20150602191349) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer_body"
@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 20150602044406) do
 
   add_index "question_answers", ["answer_id"], name: "index_question_answers_on_answer_id"
   add_index "question_answers", ["question_id"], name: "index_question_answers_on_question_id"
-
-  create_table "questionanswers", force: :cascade do |t|
-    t.integer  "question_id"
-    t.integer  "answer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "questionanswers", ["answer_id"], name: "index_questionanswers_on_answer_id"
-  add_index "questionanswers", ["question_id"], name: "index_questionanswers_on_question_id"
 
   create_table "questions", force: :cascade do |t|
     t.string   "question_name"
@@ -76,13 +66,10 @@ ActiveRecord::Schema.define(version: 20150602044406) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "password_digest"
-    t.string   "string"
-    t.string   "remember_digest"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

@@ -9,11 +9,10 @@
         <li class = checkbox inline>
           <%= check_box_tag 'questions_names[]', x.id %>
           <%= x.question_body %>
-
         </li>
         <% end %>
       </ul>
-  
+      <br>
       <%= submit_tag "Select the questions for the quiz" %>
       <% end %>
 

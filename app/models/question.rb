@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
     has_many :quizzes, through: :quizquestions
     belongs_to :user
 
-    has_many :questionanswers
-    has_many :answers, through: :questionanswers
+    has_many :question_answers
+    has_many :answers, through: :question_answers
 
 end

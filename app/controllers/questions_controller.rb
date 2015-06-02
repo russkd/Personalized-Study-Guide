@@ -48,11 +48,10 @@ def update
 end
 
 def selected_answers
-  @question = Question.create
-  @answers = params['answer_names']
-
-  @answers.each do |answ|
-    QuestionAnswer.create(question_id: @question.id, answer_id: answ.to_i)
+  @question_answer = QuestionAnswer.create
+  @answer = @question_answer
+  @answer.each do |answ|
+    QuestionAnswer.create(question_id: @question.id, question_body: @question_body, answer_body: @answer_body, answer_id: answ.to_i)
   end
   redirect_to @question
 end

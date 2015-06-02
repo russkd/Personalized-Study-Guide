@@ -4,14 +4,17 @@
     <%= "Question Id: #{@question.id}"  %>
     <br>
     <br>
-  
+
     <br>
 
-    <%= "Question Name: #{question_name}" %>
-    <%= "Question Subject: #{subject}"  %>
+    <%= "Question Name: #{@question.question_body} "%>
+    <br>
+    <br>
+    <%= "Subject: #{@question.subject}"  %>
+
           <ul>
             <% @question.answers.each do |q| %>
-              <li><%= "Answer Body: #{q.answer_body}"%></li>
+              <li><%= "Answer: #{q.answer_body}"%></li>
           </ul>
       <br>
     <% end %>
