@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
 
         @questions = Question.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
       else
-        @questions = Question.last(20)
+        @questions = Question.last(15)
       end
     end
 

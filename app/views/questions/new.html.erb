@@ -1,15 +1,12 @@
-<% provide(:title, 'Build the Questions') %>
+<% provide(:title, 'Build the Question') %>
 <h1>Build a Question</h1>
 
 <div class="row">
     <div class="col-md-5 col-md-offset-1">
         <%= form_for(@question) do |f| %>
         <%#= render 'shared/error_messages' %>
-            <%= f.label :question_name %>
-            <%= f.text_field :question_name, class: 'form-control' %>
-
-            <%= f.label :question_body %>
-            <%= f.text_field :question_body, class: 'form-control' %>
+            <%= f.label :question %>
+            <%= f.text_field :question, class: 'form-control' %>
 
             <%= f.label :answer %>
             <%= f.text_field :answer, class: 'form-control' %>
@@ -17,18 +14,20 @@
             <%= f.label :subject %>
             <%= f.text_field :subject.downcase, class: 'form-control'  %>
             <br><br>
+
             <%= f.submit "Add a question", class: "btn btn-primary" %>
+
         <% end %>
     </div>
 
     <div class="col-md-5 col-md-offset-1">
     <h1>Possible Answers</h1>
 
-    <%= form_tag(quizzes_selected_questions_path, method: :get) do %>
+    <%= form_tag(questions_selected_answers_path, method: :get) do %>
       <ul>
         <% @answers.each do |x| %>
         <li class = checkbox inline>
-          <%= check_box_tag 'answers[]', x.id %>
+          <%= check_box_tag 'answers_bodies[]', x.id %>
           <%= x.answer_body %>
         </li>
         <% end %>
@@ -38,7 +37,7 @@
 
         <h2>Search Answers by Subject</h2>
 
-          <%= form_tag(new_answer_path, :method => "get", id: "search-form") do %>
+          <%= form_tag(new_question_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Answers" %>
             <%= submit_tag "Search", :name => nil %>
           <% end %>

@@ -1,10 +1,9 @@
 class Answer < ActiveRecord::Base
 # Relationships
-<<<<<<< HEAD
-    belongs_to :question
-=======
-    has_many :questionanswers
-    has_many :questions, through: :questionanswers
->>>>>>> studentModel
-    belongs_to :teacher
+
+    belongs_to :user
+
+    has_many :question_answers
+    has_many :questions, through: :question_answers
+
 end

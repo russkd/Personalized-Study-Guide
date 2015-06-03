@@ -1,24 +1,24 @@
 <% provide(:title, 'Show the Question') %>
 
-<% provide(:title, @question.question_name) %>
-    <div class="row">
-        <aside class="col-md-12">
-            <section class="user_info">
-                <h1><%= gravatar_for @user %></h1><br>
-                <h4><%= @user.name%></h4><br><br>
-                <h3>Question Name:  <%= @question.question_name %></h3>
-                <h3>
-                Question:  <%= @question.question_body %>
-                </h3>
-                <h3>
-                Answer:  <%= @question.answer %>
-                </h3>
-                <h3>
-                Subject:  <%= @question.subject %>
-                </h3>
-            </section>
-        </aside>
-    </div>
+
+    <%= "Question Id: #{@question.id}"  %>
+    <br>
+    <br>
+
+    <br>
+
+    <%= "Question Name: #{@question.question} "%>
+    <br>
+    <br>
+    <%= "Subject: #{@question.subject}"  %>
+
+          <ul>
+            <% @question.answers.each do |q| %>
+              <li><%= "Answer: #{q.answer_body}"%></li>
+          </ul>
+      <br>
+    <% end %>
+
     <% if current_user.id == @question.user_id %>
       <%= link_to 'Edit', edit_question_path(@question) %><br>
       <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -7,15 +7,16 @@
       <ul>
         <% @questions.each do |x| %>
         <li class = checkbox inline>
-          <%= check_box_tag 'questions_names[]', x.id %>
-          <%= x.question_body %>
+          <%= check_box_tag 'questions[]', x.id %>
+          <%= x.question %>
         </li>
         <% end %>
       </ul>
+      <br>
       <%= submit_tag "Select the questions for the quiz" %>
       <% end %>
 
-        <h2>Search Questions by Subject</h2>
+        <h1>Search by Subject</h1>
 
           <%= form_tag(new_quiz_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Questions" %>
