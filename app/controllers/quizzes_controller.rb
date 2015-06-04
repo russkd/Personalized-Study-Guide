@@ -14,6 +14,7 @@ end
 
 def show
     @quiz = Quiz.find(params[:id])
+    @answers = Answer.find_by_sql("SELECT * FROM question_answers WHERE question_id = 1 ;")
 end
 
 def edit

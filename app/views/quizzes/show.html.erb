@@ -1,6 +1,7 @@
 <% provide(:title, 'Show the Quiz') %>
 
 <%= "Quiz Id: #{@quiz.id}"  %>
+<%= raise @answers.inspect %>
 <br>
 <br>
 <h3>Total Questions: <%=@quiz.questions.count%></h3>

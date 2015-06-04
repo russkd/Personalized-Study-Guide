@@ -19,6 +19,7 @@ end
 def show
   @user = current_user
   @question = Question.find(params[:id])
+  
 
   # @question_answer = QuestionAnswer.create
   # @answer = @question_answer
