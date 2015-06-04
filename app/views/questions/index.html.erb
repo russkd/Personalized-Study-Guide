@@ -1,9 +1,9 @@
-<h1>Question Index</h1>
+<h1>List of Questions with their Subject and Answers</h1>
 
 <% @questions.each do |x| %>
 <li> Subject Area : <%= x.subject %></li>
 <li> Q : <%= x.question %> </li>
-<li> A : <%= x.answer %> </li>
+<li> A : <%= x.answers %> </li>
 <li>  <%= link_to 'Show', (x) %><br>
 <hr>
 <% end %>

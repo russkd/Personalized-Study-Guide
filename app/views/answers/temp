@@ -1,0 +1,22 @@
+<div class="col-md-5 col-md-offset-1">
+<h1>Possible Answers</h1>
+
+<%= form_tag(questions_selected_answers_path, method: :get) do %>
+  <ul>
+    <% @answers.each do |x| %>
+    <li class = checkbox inline>
+      <%= check_box_tag 'answers_bodies[]', x.id %>
+      <%= x.answer_body %>
+    </li>
+    <% end %>
+  </ul>
+  <%= submit_tag "Select the answers for the question" %>
+  <% end %>
+
+    <h2>Search Answers by Subject</h2>
+
+      <%= form_tag(new_question_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Answers" %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
+</div>

@@ -1,4 +1,7 @@
 class Student < ActiveRecord::Base
-  has_many :student_quizzes
-  has_many :quizzes, through: :student_quizzes
+  has_many :student_answers
+  has_many :QuizQuestion, through: :student_answer
+
+  has_many :student_answers
+  has_many :QuestionAnswer, through: :student_answer
 end

@@ -4,7 +4,7 @@ class QuizzesController < ApplicationController
 
         @questions = Question.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
       else
-        @questions = Question.last(15)
+        @questions = Question.last(10)
       end
     end
 
@@ -43,7 +43,7 @@ end
 
 def selected_questions
   @quiz = Quiz.create
-  @questions = params['questions_names']
+  @questions = params['questions']
   @questions.each do |quest|
     Quizquestion.create(quiz_id: @quiz.id, question_id: quest.to_i)
   end
@@ -59,8 +59,11 @@ end
 
 private
   def question_params
-      params.require(:quizzes).permit(:name, :email, :password, :question_name, :question_body, :answer, :answer_body, :subject, :quiz, :teacher_id,
+      params.require(:quizzes).permit(:question, :answer_body, :subject, :quiz,
 
       :password_confirmation)
+
+      @question.update(question_params)
+      @answer.update (answer_params)
   end
 end

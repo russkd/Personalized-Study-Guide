@@ -19,6 +19,9 @@ end
 def show
   @user = current_user
   @question = Question.find(params[:id])
+
+  # @question_answer = QuestionAnswer.create
+  # @answer = @question_answer
 end
 
 def edit
@@ -28,14 +31,15 @@ end
 def create
     # @question
   @question = Question.new(question_params)
-  p "****************"
-  p @question
-  if @question.save
+  answer = Answer.find(params[:answers_bodies][0])
+  # { |ab| puts ab.answer_body }
+    if @question.save
+      @question.answers << answer
       redirect_to @question
-  else
+    else
       render 'new'
+    end
   end
-end
 
 def update
   @question = Question.find(params[:id])
@@ -51,7 +55,7 @@ def selected_answers
   @question_answer = QuestionAnswer.create
   @answer = @question_answer
   @answer.each do |answ|
-    QuestionAnswer.create(question_id: @question.id, question_body: @question_body, answer_body: @answer_body, answer_id: answ.to_i)
+    QuestionAnswer.create(question_id: @question.id, question: @question, answer_body: @answer_body, answer_id: answ.to_i)
   end
   redirect_to @question
 end
@@ -65,7 +69,7 @@ end
 
 private
   def question_params
-    params.require(:question).permit(:name, :email, :password, :question_id, :question_name, :question_body, :answer_id, :answer_body, :subject, :quiz, :user_id, :password_confirmation)
+    params.require(:question).permit(:question, :answer_id, :answer_body, :subject, :answers_bodies => [])
 
   end
 end
