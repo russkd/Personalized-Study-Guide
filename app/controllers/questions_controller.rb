@@ -29,12 +29,17 @@ def edit
 end
 
 def create
-    # @question
+    #Answer.find([8,9,10]) returns an array, not an ActiveRecord
+    # collection
+
   @question = Question.new(question_params)
-  answer = Answer.find(params[:answers_bodies][0])
-  # { |ab| puts ab.answer_body }
+  #answers is an ARRAY of matched answers
+  answers = Answer.find(params[:answers_bodies])
+
     if @question.save
-      @question.answers << answer
+      answers.each do |ans|
+        @question.answers << ans
+      end
       redirect_to @question
     else
       render 'new'
