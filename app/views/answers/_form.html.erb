@@ -6,10 +6,10 @@
         <%#= render 'shared/error_messages' %>
 
             <%= f.label :answer_body %>
-            <%= f.text_field :answer_body, class: 'form-control' %>
-
+            <%= f.text_field :answer_body, class: 'form-control', placeholder: "Enter the answer" %>
+            <br>
             <%= f.label :subject %>
-            <%= f.text_field :subject.downcase, class: 'form-control'  %>
+            <%= f.text_field :subject.downcase, class: 'form-control', placeholder: "Enter the subject"  %>
             <br><br>
             <%= f.submit "Add an answer", class: "btn btn-primary" %>
         <% end %>
