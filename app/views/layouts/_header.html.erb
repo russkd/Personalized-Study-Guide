@@ -3,67 +3,69 @@
     <%= link_to "Quiz Builder", root_path, id: "logo" %>
         <nav>
             <ul class="nav navbar-nav navbar-right">
-                    <% if logged_in? %>
-                    <li><%= link_to "Help", help_path %></li>
+              <% if logged_in? %>
+              <li><%= link_to "Help", help_path %></li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Questions <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "List of Questions", '/questions' %></li>
-                        <li><%= link_to "New Question", '/questions/new' %></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Answers <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "List of Answers", '/answers' %></li>
-                        <li><%= link_to "New Answer", '/answers/new' %></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Quizzes <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "List of Quizzes", '/quizzes' %></li>
-                        <li><%= link_to "Build a New Quiz", '/quizzes/new' %></li>
-                        <li><%= link_to "Give a Quiz", '/quizzes/new' %></li>
-                    </ul>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Answers <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to "List of Answers", '/answers' %></li>
+                      <li><%= link_to "New Answer", '/answers/new' %></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Questions <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to "List of Questions", '/questions' %></li>
+                      <li><%= link_to "New Question", '/questions/new' %></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Quizzes <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to "List of Quizzes", '/quizzes' %></li>
+                      <li><%= link_to "Build a New Quiz", '/quizzes/new' %></li>
+                      <li><%= link_to "Give a Quiz", '/quizzes/new' %></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Users <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to "Teacher" %></li>
+                      <li><%= link_to "Student" %></li>
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      Account <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><%= link_to "Current User Profile", current_user %></li>
+                      <li><%= link_to "Settings", '#' %></li>
+                      <li class="divider"></li>
+                      <li>
+                          <%= link_to "Log out", logout_path, method: "delete" %>
+                      </li>
+                  </ul>
                 </li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Users <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "Teacher" %></li>
-                        <li><%= link_to "Student" %></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Account <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><%= link_to "Current User Profile", current_user %></li>
-                        <li><%= link_to "Settings", '#' %></li>
-                        <li class="divider"></li>
-                        <li>
-                            <%= link_to "Log out", logout_path, method: "delete" %>
-                        </li>
-                    </ul>
-                </li>
-
-            <% else %>
-                <li><%= link_to "Log in", login_path %></li>
-            <% end %>
-              <li><%= link_to "Home", root_path %></li>
-            </ul>
+          <% else %>
+              <li><%= link_to "Log in", login_path %></li>
+          <% end %>
+            <li><%= link_to "Home", root_path %></li>
+          </ul>
         </nav>
     </div>
 </header>
