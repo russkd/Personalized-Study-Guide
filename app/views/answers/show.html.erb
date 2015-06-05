@@ -13,7 +13,8 @@
             </section>
         </aside>
     </div>
-    <% if current_user.id == @answer.user_id %>
+    <br>
+    <!-- <% if current_user.id == @answer.user_id %> -->
       <%= link_to 'Edit', edit_answer_path(@answer) %><br>
       <%= link_to 'Destroy', @answer, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
