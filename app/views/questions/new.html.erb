@@ -26,7 +26,7 @@
         <% end %>
 
         <br>
-          <h2>Search by Subject</h2>
+          <h2>Search Answers by Subject</h2>
 
             <%= form_tag(new_question_path, :method => "get", id: "search-form") do %>
               <%= text_field_tag :search, params[:search], placeholder: "Search Answers" %>
