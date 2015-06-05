@@ -25,7 +25,15 @@ def show
 end
 
 def edit
-    @question = Question.find(params[:id])
+  @question = Question.new
+  # This is necessary to avoid a nil.
+
+    if params[:search]
+
+      @answers = Answer.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
+    else
+      @answers = Answer.last(15)
+    end
 end
 
 def create
