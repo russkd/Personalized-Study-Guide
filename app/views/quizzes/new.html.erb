@@ -15,8 +15,8 @@
       <br>
       <%= submit_tag "Select the questions for the quiz" %>
       <% end %>
-
-        <h1>Search by Subject</h1>
+      <br>
+        <h2>Search by Subject</h2>
 
           <%= form_tag(new_quiz_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Questions" %>
