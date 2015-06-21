@@ -58,7 +58,7 @@ def destroy
 end
 
 private
-  def question_params
+  def quiz_params
       params.require(:quizzes).permit(:question, :answer_body, :subject, :quiz,
 
       :password_confirmation)

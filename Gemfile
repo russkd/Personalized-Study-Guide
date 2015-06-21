@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
 gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -62,5 +61,3 @@ end
 gem 'carrierwave'
 gem 'rmagick'
 gem 'pry-rails'
-
-
