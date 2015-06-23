@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'users/:id' => 'users#show', as: "user"
     get 'signup' => 'users#new'
     post 'users' => 'users#create'
-    get 'users/:id/edit' => 'users#edit', as: "edit"
+    get 'users/:id/edit' => 'users#edit', as: "edit_user"
     patch 'users/:id/' => 'users#update'
     delete 'users/:id' => 'users#destroy'
 

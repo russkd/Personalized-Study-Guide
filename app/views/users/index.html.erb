@@ -1,8 +1,10 @@
-<h1>Index of Users</h1>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
 
-<% @users.each do |x| %>
-<li><%= x.name %></li>
-<li><%= gravatar_for @user %></li>
-<li> <%= x.email %> </li>
-<% end %>
+<%= will_paginate %>
 
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>

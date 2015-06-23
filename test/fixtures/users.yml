@@ -4,3 +4,238 @@ michael:
   name: Michael Example
   email: michael@example.com
   password_digest: <%= User.digest('password') %>
+
+russell:
+  name: Russell Example
+  email: russell@example.com
+  password_digest: <%= User.digest('password') %>
+
+tom:
+  name: Thomas Example
+  email: thomas@example.com
+  password_digest: <%= User.digest('password') %>
+
+harry:
+  name: Harry Example
+  email: harry@example.com
+  password_digest: <%= User.digest('password') %>
+
+sally:
+  name: Sally Example
+  email: sally@example.com
+  password_digest: <%= User.digest('password') %>
+
+cynthia:
+  name: Cynthia Example
+  email: cynthia@example.com
+  password_digest: <%= User.digest('password') %>
+
+oscar:
+  name: Oscar Example
+  email: oscar@example.com
+  password_digest: <%= User.digest('password') %>
+
+george:
+  name: George Example
+  email: george@example.com
+  password_digest: <%= User.digest('password') %>
+
+dean:
+  name: Dean Example
+  email: dean@example.com
+  password_digest: <%= User.digest('password') %>
+
+purvis:
+  name: Purvis Example
+  email: purvis@example.com
+  password_digest: <%= User.digest('password') %>
+
+bethany:
+  name: Bethany Example
+  email: bethany@example.com
+  password_digest: <%= User.digest('password') %>
+
+peter:
+  name: Peter Example
+  email: peter@example.com
+  password_digest: <%= User.digest('password') %>
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+
+russell:
+  name: Russell Example
+  email: russell@example.com
+  password_digest: <%= User.digest('password') %>
+
+tom:
+  name: Thomas Example
+  email: thomas@example.com
+  password_digest: <%= User.digest('password') %>
+
+harry:
+  name: Harry Example
+  email: harry@example.com
+  password_digest: <%= User.digest('password') %>
+
+sally:
+  name: Sally Example
+  email: sally@example.com
+  password_digest: <%= User.digest('password') %>
+
+cynthia:
+  name: Cynthia Example
+  email: cynthia@example.com
+  password_digest: <%= User.digest('password') %>
+
+oscar:
+  name: Oscar Example
+  email: oscar@example.com
+  password_digest: <%= User.digest('password') %>
+
+george:
+  name: George Example
+  email: george@example.com
+  password_digest: <%= User.digest('password') %>
+
+dean:
+  name: Dean Example
+  email: dean@example.com
+  password_digest: <%= User.digest('password') %>
+
+purvis:
+  name: Purvis Example
+  email: purvis@example.com
+  password_digest: <%= User.digest('password') %>
+
+bethany:
+  name: Bethany Example
+  email: bethany@example.com
+  password_digest: <%= User.digest('password') %>
+
+peter:
+  name: Peter Example
+  email: peter@example.com
+  password_digest: <%= User.digest('password') %>
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+
+russell:
+  name: Russell Example
+  email: russell@example.com
+  password_digest: <%= User.digest('password') %>
+
+tom:
+  name: Thomas Example
+  email: thomas@example.com
+  password_digest: <%= User.digest('password') %>
+
+harry:
+  name: Harry Example
+  email: harry@example.com
+  password_digest: <%= User.digest('password') %>
+
+sally:
+  name: Sally Example
+  email: sally@example.com
+  password_digest: <%= User.digest('password') %>
+
+cynthia:
+  name: Cynthia Example
+  email: cynthia@example.com
+  password_digest: <%= User.digest('password') %>
+
+oscar:
+  name: Oscar Example
+  email: oscar@example.com
+  password_digest: <%= User.digest('password') %>
+
+george:
+  name: George Example
+  email: george@example.com
+  password_digest: <%= User.digest('password') %>
+
+dean:
+  name: Dean Example
+  email: dean@example.com
+  password_digest: <%= User.digest('password') %>
+
+purvis:
+  name: Purvis Example
+  email: purvis@example.com
+  password_digest: <%= User.digest('password') %>
+
+bethany:
+  name: Bethany Example
+  email: bethany@example.com
+  password_digest: <%= User.digest('password') %>
+
+peter:
+  name: Peter Example
+  email: peter@example.com
+  password_digest: <%= User.digest('password') %>
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+
+russell:
+  name: Russell Example
+  email: russell@example.com
+  password_digest: <%= User.digest('password') %>
+
+tom:
+  name: Thomas Example
+  email: thomas@example.com
+  password_digest: <%= User.digest('password') %>
+
+harry:
+  name: Harry Example
+  email: harry@example.com
+  password_digest: <%= User.digest('password') %>
+
+sally:
+  name: Sally Example
+  email: sally@example.com
+  password_digest: <%= User.digest('password') %>
+
+cynthia:
+  name: Cynthia Example
+  email: cynthia@example.com
+  password_digest: <%= User.digest('password') %>
+
+oscar:
+  name: Oscar Example
+  email: oscar@example.com
+  password_digest: <%= User.digest('password') %>
+
+george:
+  name: George Example
+  email: george@example.com
+  password_digest: <%= User.digest('password') %>
+
+dean:
+  name: Dean Example
+  email: dean@example.com
+  password_digest: <%= User.digest('password') %>
+
+purvis:
+  name: Purvis Example
+  email: purvis@example.com
+  password_digest: <%= User.digest('password') %>
+
+bethany:
+  name: Bethany Example
+  email: bethany@example.com
+  password_digest: <%= User.digest('password') %>
+
+peter:
+  name: Peter Example
+  email: peter@example.com
+  password_digest: <%= User.digest('password') %>

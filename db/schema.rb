@@ -1,17 +1,6 @@
-# encoding: UTF-8
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
-#
-# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603041521) do
+
+ActiveRecord::Schema.define(version: 20150623033721) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "answer_body"
@@ -63,14 +52,14 @@ ActiveRecord::Schema.define(version: 20150603041521) do
 
   create_table "student_answers", force: :cascade do |t|
     t.integer  "student_id"
-    t.integer  "QuizQuestion_id"
-    t.integer  "QuestionAnswer_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "quizquestion_id"
+    t.integer  "question_answer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
-  add_index "student_answers", ["QuestionAnswer_id"], name: "index_student_answers_on_QuestionAnswer_id"
-  add_index "student_answers", ["QuizQuestion_id"], name: "index_student_answers_on_QuizQuestion_id"
+  add_index "student_answers", ["question_answer_id"], name: "index_student_answers_on_question_answer_id"
+  add_index "student_answers", ["quizquestion_id"], name: "index_student_answers_on_quizquestion_id"
   add_index "student_answers", ["student_id"], name: "index_student_answers_on_student_id"
 
   create_table "student_quizzes", force: :cascade do |t|
@@ -95,11 +84,13 @@ ActiveRecord::Schema.define(version: 20150603041521) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "type"
+    t.boolean  "admin",           default: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
