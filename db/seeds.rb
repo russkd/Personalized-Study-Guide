@@ -180,14 +180,14 @@ Answer.create({ answer_body: 'Distal phalanges of the foot', subject: 'Anatomy' 
 
 
 User.create!(name: "Example User",
-             email: "example@ingenuitor.com",
+             email: "example@railstutorial.org",
              password: "foobar",
              password_confirmation: "foobar",
              admin: true)
 
 99.times do |n|
  name = Faker::Name.name
- email = "example-#{n+1}@ingenuitor.com"
+ email = "example-#{n+1}@railstutorial.org"
  password = "password"
  User.create!(name: name,
               email: email,
