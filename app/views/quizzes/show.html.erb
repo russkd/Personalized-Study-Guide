@@ -16,6 +16,8 @@
         <li><%= "Answer: #{q.answers}" %></li>
 
         <li><%= "Question Subject: #{q.subject}" %></li>
+        <%= link_to 'Edit', question_path(q.id) %><br>
+        <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure you want to remove this question?' } %>
     </ul>
 <br>
 </li>
@@ -24,6 +26,5 @@
 <br>
 
 <%# if current_user.id == @quiz.user_id %>
-  <%= link_to 'Edit', edit_quiz_path(@quiz) %><br>
-  <%= link_to 'Destroy', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <%# end %>

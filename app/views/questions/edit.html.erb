@@ -9,10 +9,10 @@
             <%= f.text_field :question, class: 'form-control' %>
 
             <ul>
-              <% @answers.each do |x| %>
+              <% @questions.answers.each do |q| %>
               <li class = checkbox inline>
                 <%= check_box_tag 'answers_bodies[]', x.id %>
-                <%= x.answer_body %>
+                <%= q.answer_body %>
               </li>
               <% end %>
             </ul>

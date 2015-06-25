@@ -65,7 +65,7 @@ class AnswersController < ApplicationController
 
   private
     def answer_params
-        params.require(:answer).permit(:name, :email, :password, :question_id, :question_name, :question_body, :answer_id, :answer_body, :subject, :quiz, :user_id, :password_confirmation)
+        params.require(:answer).permit(:question_id, :question_name, :question_body, :answer_id, :answer_body, :subject, :quiz, :user_id)
     end
 
 end
