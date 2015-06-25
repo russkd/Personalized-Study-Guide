@@ -10,7 +10,7 @@
             <br>
             <%= f.label :subject %>
             <%= f.text_field :subject.downcase, class: 'form-control', placeholder: "Enter the Subject"  %>
-
+            <h2>Possible Answers</h2>
             <ul>
               <% @answers.each do |x| %>
               <li class = checkbox inline>

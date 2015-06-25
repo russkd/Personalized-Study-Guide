@@ -13,7 +13,7 @@
 Question.create({ question: 'Who was the first US President?', subject: 'US History' })
 Question.create({ question: 'Who was the second US President?', subject: 'US History' })
 Question.create({ question: 'Who was the third US President?',  subject: 'US History' })
-Question.create({ question: 'Who was the fourt US President?', subject: 'US History' })
+Question.create({ question: 'Who was the fourth US President?', subject: 'US History' })
 Question.create({ question: 'Who was the fifth US President?', subject: 'US History' })
 Question.create({ question: 'Who was the sixth US President?', subject: 'US History' })
 Question.create({ question: 'Who was the seventh US President?', subject: 'US History' })
@@ -98,25 +98,25 @@ Answer.create({ answer_body: 'George H. W. Bush', subject: 'US History' })
 Answer.create({ answer_body: 'Bill Clinton', subject: 'US History' })
 Answer.create({ answer_body: 'George W. Bush', subject: 'US History' })
 Answer.create({ answer_body: 'Barack Obama', subject: 'US History' })
-Answer.create({ answer_body: 'Independent', subject: 'US History' })
-Answer.create({ answer_body: 'Federalist', subject: 'US History' })
-Answer.create({ answer_body: 'Democratic-Republican', subject: 'US History' })
-Answer.create({ answer_body: 'Democratic', subject: 'US History' })
-Answer.create({ answer_body: 'Whig', subject: 'US History' })
-Answer.create({ answer_body: 'Republican', subject: 'US History' })
+Answer.create({ answer_body: 'Independent', subject: 'Party' })
+Answer.create({ answer_body: 'Federalist', subject: 'Party' })
+Answer.create({ answer_body: 'Democratic-Republican', subject: 'Party' })
+Answer.create({ answer_body: 'Democratic', subject: 'Party' })
+Answer.create({ answer_body: 'Whig', subject: 'Party' })
+Answer.create({ answer_body: 'Republican', subject: 'Party' })
 
 
 
 
 User.create!(name: "Example User",
-             email: "example@railstutorial.org",
+             email: "example@ingenuitor.com",
              password: "foobar",
              password_confirmation: "foobar",
              admin: true)
 
 99.times do |n|
  name = Faker::Name.name
- email = "example-#{n+1}@railstutorial.org"
+ email = "example-#{n+1}@ingenuitor.com"
  password = "password"
  User.create!(name: name,
               email: email,

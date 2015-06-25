@@ -1,5 +1,7 @@
 class QuizzesController < ApplicationController
     def new
+      @quiz = Quiz.new
+
       if params[:search]
 
         @questions = Question.where('LOWER(subject) LIKE (?)', "%#{params[:search].downcase}%")
@@ -59,9 +61,7 @@ end
 
 private
   def quiz_params
-      params.require(:quizzes).permit(:question, :answer_body, :subject, :quiz,
-
-      :password_confirmation)
+      params.require(:quizzes).permit(:question, :answer_body, :subject, :quiz, :name)
 
       # @question.update(question_params)
       @answer.update (answer_params)

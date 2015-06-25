@@ -9,9 +9,9 @@
             <%= f.text_field :question, class: 'form-control' %>
 
             <ul>
-              <% @questions.answers.each do |q| %>
+              <% @question.answers.each do |q| %>
               <li class = checkbox inline>
-                <%= check_box_tag 'answers_bodies[]', x.id %>
+                <%= check_box_tag 'answers_bodies[]', q.id %>
                 <%= q.answer_body %>
               </li>
               <% end %>
@@ -21,7 +21,7 @@
             <%= f.text_field :subject.downcase, class: 'form-control'  %>
             <br><br>
 
-            <%= f.submit "Edit this question", class: "btn btn-primary" %>
+            <%= f.submit "Update this question", class: "btn btn-primary" %>
 
         <% end %>
     </div>
