@@ -17,8 +17,6 @@ This, obviously, is a very ambitious project; therefore, it has to be broken dow
 	<li>Login and authentication of teacher or student users</li>
 	<li>The ability to build a quiz by an authenticated teacher {QuizBuilder module}</li>
 	<li>The ability for the teacher to access different subject material as a source of the questions.</li>
-	<li>The ability to c</li>
-	<li>lkjlkj</li>
 </ul>
 
 
